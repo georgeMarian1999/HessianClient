@@ -15,10 +15,11 @@ public class ConnectionFactory {
 
     public static HessianServerInterface getNewConnection() {
         try {
+            System.out.println("Getting new connection");
             hessianProxyFactory = new HessianProxyFactory();
             hessianProxyFactory.setHessian2Request(true);
             String url = ("http://localhost:8080" +
-                    "/HessianServer" + "/books");
+                    "/HessianJavaServer" + "/books");
             serverProxy = (HessianServerInterface) hessianProxyFactory.create(HessianServerInterface.class,url);
             return serverProxy;
         }catch (Exception e) {

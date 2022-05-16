@@ -3,24 +3,19 @@
 <html>
 <head>
     <title>BookStore</title>
+    <link rel="stylesheet" href="styles/main.css"/>
 </head>
 <body>
 <div>
-    <div class="home-title">
+    <div >
         <h2>Welcome to the BookStore</h2>
     </div>
-    <div class="home-content">
-        <a href="authors.jsp" class="left-corner-button authors-button">
+    <div class="form-wrapper">
+        <a href="authors.jsp">
             See Authors
         </a>
-        <a class="left-corner-button books-button">
+        <a href="books.jsp">
             See books
-        </a>
-        <a class="left-corner-button add-author-button">
-
-        </a>
-        <a class="left-corner-button add-book-button">
-
         </a>
     </div>
 </div>
