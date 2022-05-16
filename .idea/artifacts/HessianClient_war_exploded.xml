@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="HessianClient:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/HessianClient_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="HessianClient" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.servlet.jstl" />
+          <element id="library" level="project" name="Maven: com.caucho:hessian:4.0.38" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="HessianClient/web/Web" />
+    </root>
+  </artifact>
+</component>
