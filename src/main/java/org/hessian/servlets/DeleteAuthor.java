@@ -18,8 +18,10 @@ public class DeleteAuthor extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer id = Integer.parseInt(request.getParameter("authorId"));
-        ConnectionFactory.getConnection().deleteAuthor(id);
+        String server = request.getParameter("server");
+        ConnectionFactory.getConnection(server).deleteAuthor(id);
 
-        response.sendRedirect(request.getContextPath() + "/author-delete-confirmation.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/authors.jsp");
+        requestDispatcher.forward(request, response);
     }
 }

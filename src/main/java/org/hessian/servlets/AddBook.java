@@ -22,10 +22,10 @@ public class AddBook extends HttpServlet {
         Integer year = Integer.parseInt(request.getParameter("year"));
         String description = request.getParameter("description");
         Integer authorId = Integer.parseInt(request.getParameter("authorId"));
+        String server = request.getParameter("server");
 
+        ConnectionFactory.getConnection(server).addBook(title, description, year, authorId);
 
-        ConnectionFactory.getConnection().addBook(title, description, year, authorId);
-
-        response.sendRedirect(request.getContextPath() + "/books.jsp");
+        request.getRequestDispatcher("books.jsp").forward(request, response);
     }
 }

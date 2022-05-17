@@ -19,8 +19,9 @@ public class DeleteBook extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer id = Integer.parseInt(request.getParameter("bookId"));
-        ConnectionFactory.getConnection().deleteBook(id);
+        String server = request.getParameter("server");
+        ConnectionFactory.getConnection(server).deleteBook(id);
 
-        response.sendRedirect(request.getContextPath() + "/book-delete-confirmation.jsp");
+        request.getRequestDispatcher("books.jsp").forward(request, response);
     }
 }

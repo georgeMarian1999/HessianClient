@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="hessian-client-1.0-SNAPSHOT.war">
+    <root id="archive" name="HessianJavaClient.war">
       <element id="artifact" artifact-name="HessianClient:war exploded" />
     </root>
   </artifact>

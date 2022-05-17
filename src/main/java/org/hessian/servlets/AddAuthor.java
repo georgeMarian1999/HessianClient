@@ -18,10 +18,10 @@ public class AddAuthor extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
         Integer age = Integer.parseInt(request.getParameter("age"));
+        String server = request.getParameter("server");
 
+        ConnectionFactory.getConnection(server).addAuthor(name, age);
 
-        ConnectionFactory.getConnection().addAuthor(name, age);
-
-        response.sendRedirect(request.getContextPath() + "/authors.jsp");
+        request.getRequestDispatcher("/authors.jsp").forward(request, response);
     }
 }

@@ -13,14 +13,22 @@ public class ConnectionFactory {
 
     }
 
-    public static HessianServerInterface getNewConnection() {
+    public static HessianServerInterface getNewConnection(String server) {
         try {
             System.out.println("Getting new connection");
             hessianProxyFactory = new HessianProxyFactory();
             hessianProxyFactory.setHessian2Request(true);
-            String url = ("http://localhost:8080" +
-                    "/HessianJavaServer" + "/books");
-            serverProxy = (HessianServerInterface) hessianProxyFactory.create(HessianServerInterface.class,url);
+            String serverURL = "";
+            if(server.equals("Java")) {
+                serverURL = ":8080/Hessian"+ server;
+            }
+            else serverURL = ":80/Hessian" + server;
+            String URL = ("http://localhost" +
+                     serverURL+"Server" + "/books");
+            if(server.equals("Php")) {
+                URL = URL + ".php";
+            }
+            serverProxy = (HessianServerInterface) hessianProxyFactory.create(HessianServerInterface.class,URL);
             return serverProxy;
         }catch (Exception e) {
             System.out.println(e);
@@ -28,10 +36,7 @@ public class ConnectionFactory {
         }
     }
 
-    public static HessianServerInterface getConnection() {
-        if (serverProxy == null) {
-            return getNewConnection();
-        }
-        return serverProxy;
+    public static HessianServerInterface getConnection(String server) {
+        return getNewConnection(server);
     }
 }

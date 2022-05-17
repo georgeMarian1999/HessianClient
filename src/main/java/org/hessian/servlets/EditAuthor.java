@@ -19,9 +19,9 @@ public class EditAuthor extends HttpServlet {
         Integer id = Integer.parseInt(request.getParameter("authorId"));
         String name = request.getParameter("name");
         Integer age = Integer.parseInt(request.getParameter("age"));
+        String server = request.getParameter("server");
+        ConnectionFactory.getConnection(server).editAuthor(id, name, age);
 
-        ConnectionFactory.getConnection().editAuthor(id, name, age);
-
-        response.sendRedirect(request.getContextPath() + "/author-edit-confirmation.jsp");
+        request.getRequestDispatcher("/authors.jsp").forward(request, response);
     }
 }

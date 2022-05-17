@@ -23,9 +23,10 @@ public class EditBook extends HttpServlet {
         Integer year = Integer.parseInt(request.getParameter("year"));
         String description = request.getParameter("description");
         Integer authorId = Integer.parseInt(request.getParameter("authorId"));
+        String server = request.getParameter("server");
 
-        ConnectionFactory.getConnection().editBook(id, title, description, year, authorId);
+        ConnectionFactory.getConnection(server).editBook(id, title, description, year, authorId);
 
-        response.sendRedirect(request.getContextPath() + "/book-edit-confirmation.jsp");
+        request.getRequestDispatcher("books.jsp").forward(request, response);
     }
 }

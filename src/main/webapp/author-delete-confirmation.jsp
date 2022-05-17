@@ -14,9 +14,7 @@
 </head>
 <body>
     <div style="display: flex;flex-direction: column;align-items: center; justify-content: center">
-        <a class="corner-button left-corner-button" href="authors.jsp">
-            Back to author table
-        </a>
+
         <div>
             <h2>Author deleted!</h2>
         </div>

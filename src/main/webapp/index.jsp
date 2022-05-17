@@ -1,3 +1,4 @@
+<%@ page import="org.hessian.connection.ConnectionFactory" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -7,16 +8,16 @@
 </head>
 <body>
 <div>
-    <div >
-        <h2>Welcome to the BookStore</h2>
-    </div>
+
     <div class="form-wrapper">
-        <a href="authors.jsp">
-            See Authors
-        </a>
-        <a href="books.jsp">
-            See books
-        </a>
+        <form class="form-wrapper" method="get" action="home.jsp" >
+            <input type="text" name="server" value="Java" class="hidden"/>
+            <input type="submit" value="Java Server"/>
+        </form>
+        <form class="form-wrapper" method="get" action="home.jsp" >
+            <input type="text" name="server" value="Php" class="hidden"/>
+            <input type="submit" value="Php Server"/>
+        </form>
     </div>
 </div>
 </body>
