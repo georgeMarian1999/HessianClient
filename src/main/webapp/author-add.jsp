@@ -16,9 +16,9 @@
 </head>
 <body>
 <div class="form-wrapper">
-    <form method="get" action="books.jsp" >
+    <form method="get" action="authors.jsp" >
         <input type="text" name="server" value="<%=server%>" class="hidden"/>
-        <input class="corner-button left-corner-button" type="submit" value="Back to books table"/>
+        <input class="corner-button left-corner-button" type="submit" value="Back to authors table"/>
     </form>
     <form class="form" method="post" action="add-author">
         <label for="name" >Name</label>
